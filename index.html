@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Logowanie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+const correctLogin = "jebać łysego";
+const correctPassword = "wszystko do 307";
+
+function login() {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+    const message = document.getElementById("message");
+
+    if (username === correctLogin && password === correctPassword) {
+        localStorage.setItem("loggedIn", "true"); // pamiętanie logowania
+        // Wyświetlamy link po zalogowaniu
+    message.style.color = "green";
+    message.innerHTML = 'Zalogowano pomyślnie! <a href = "https://www.youtube.com/watch?v=KVHfCVJ5Kfk">Kliknij tutaj, aby przejść dalej</a>';
+    } else {
+        message.style.color = "red";
+        message.textContent = "Błędny login lub hasło!";
+    }
+    function togglePassword() {
+    const passInput = document.getElementById("password");
+    const checkbox = document.getElementById("showPassword");
+    if(checkbox.checked){
+        passInput.type = "text";
+    } else {
+        passInput.type = "password";
+    }
+}
+}
+</script>
+<body>
+<div class="login-box">
+    <h6 style="color: rgba(15, 15, 25, 0.326)">jebać kiśla</h6>  <!--easter egg po zaznaczeniu login boxa-->
+    <h2>Logowanie do dziennika Bursa szkolna nr 2</h2>
+    <input type="text" id="username" placeholder="Login">
+    <input type="password" id="password" placeholder="Hasło">
+    <div style="text-align: left; margin: 5px 0;">
+
+</div>
+    <button onclick="login()">Zaloguj</button>
+    <div class="message" id="message"></div>
+</div>
+<div>
+    
+</div>
+
+
+
+</body>
+</html>
